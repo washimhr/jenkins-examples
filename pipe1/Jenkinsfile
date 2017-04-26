@@ -1,4 +1,8 @@
 node { 
+checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
+	doGenerateSubmoduleConfigurations: false, extensions: [], 
+	submoduleCfg: [], userRemoteConfigs: [[url: 'http://github.com/savishy//spring-petclinic']]])
 bat 'mvn install'
 bat 'mvn test'
+archiveArtifacts '**/target/*/*.xml'
 }
