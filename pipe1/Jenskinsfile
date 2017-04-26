@@ -1,0 +1,4 @@
+node { 
+bat 'mvn install'
+bat 'mvn test'
+}
